@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Niña Hermosa 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            color: #d63384;
+            margin-top: 50px;
+        }
+
+        .mensaje {
+            font-size: 20px;
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .recuadro {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: 300px;
+            height: 150px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        #si {
+            background-color: green;
+            color: white;
+        }
+
+        #no {
+            background-color: red;
+            color: white;
+            position: absolute;
+        }
+
+        /* Estilo del Pop-up */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url('https://img.freepik.com/vector-gratis/fondo-corazones-brillantes-estilo-bokeh_1048-11946.jpg') center/cover no-repeat;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            color: white;
+            font-weight: bold;
+            animation: latidos 1.5s infinite alternate;
+            border: 3px solid #ff4081;
+        }
+
+        #popup h2, #popup p {
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        #popup button {
+            background-color: #ff4081;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        @keyframes latidos {
+            from {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mensaje">
+        <h2>¡Buenos días, mi niña hermosa! 💖</h2>
+        <p>Pensé que me demoraría más, pero espero que te guste mucho.</p>
+        <p>Sé que la distancia es un tema, pero no será para siempre, estoy trabajando duro para eso mi amorcito uwu tenme paciencia por favor.</p>
+        <p>Y ya que se viene el Día de San Valentín... ¡La invito a tener una cita virtual con tu niño hermoso UwU! 😘</p>
+        <p>Te quiero mucho, no faltes, ¡jajajsjs! 💌</p>
+    </div>
+
+    <div class="recuadro">
+        <p><b>¿Aceptas mi invitación? 🥺💕</b></p>
+        <button id="si" onclick="aceptar()">Sí</button>
+        <button id="no" onmouseover="moverBoton()">No</button>
+    </div>
+
+    <div id="popup">
+        <h2>¡Sabía que aceptarías, mi niña hermosa! 😍💕</h2>
+        <p>Jajs gracias por ser mi noviecita 🥰</p>
+        <p>Nos vemos el 14 en nuestra cita UwU 💖</p>
+        <button onclick="cerrarPopup()">Cerrar</button>
+    </div>
+
+    <script>
+        function moverBoton() {
+            let botonNo = document.getElementById("no");
+            let recuadro = document.querySelector(".recuadro");
+            
+            let maxX = recuadro.clientWidth - botonNo.clientWidth;
+            let maxY = recuadro.clientHeight - botonNo.clientHeight;
+
+            let x = Math.random() * maxX;
+            let y = Math.random() * maxY;
+
+            botonNo.style.left = `${x}px`;
+            botonNo.style.top = `${y}px`;
+        }
+
+        function aceptar() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function cerrarPopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
